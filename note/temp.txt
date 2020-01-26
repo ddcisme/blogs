@@ -1,0 +1,37 @@
+注解处理器，可以在编译期间生成代码，文件等，lombok 实现原理 https://www.race604.com/annotation-processing/
+RandomPort
+
+
+spring cloud 多人开发
+添加配置，注册时为name_host
+获取sysId 会移除host
+前端添加配置，增加host
+
+
+
+分布式事务规范 
+
+
+零拷贝原理
+Consumer 消费消息过程，使用了零拷贝，零拷贝包含以下两种方式
+1. 使用 mmap + write 方式
+优点：即使频繁调用，使用小块文件传输，效率也很高
+缺点：不能很好的利用 DMA 方式，会比 sendfile 多消耗 CPU，内存安全性控制复杂，需要避免 JVM Crash
+问题。
+2. 使用 sendfile 方式
+优点：可以利用 DMA 方式，消耗 CPU 较少，大块文件传输效率高，无内存安全新问题。
+缺点：小块文件效率低于 mmap 方式，只能是 BIO 方式传输，不能使用 NIO。
+RocketMQ 选择了第一种方式，mmap+write 方式，因为有小块数据传输的需求，效果会比 sendfile 更好。
+关于 Zero Copy 的更详细介绍，请参考以下文章
+http://www.linuxjournal.com/article/6345
+
+
+
+控制信息与数据信息使用不同的 HTTP 连接
+使用长连接时，存在一个很常见的场景：客户端网页需要关闭，而服务器端还处在读取数据的堵塞状态，客户端需要及时通知服务器端关闭数据连接。服务器在收到关闭请求后首先要从读取数据的阻塞状态唤醒，然后释放为这个客户端分配的资源，再关闭连接。
+
+所以在设计上，我们需要使客户端的控制请求和数据请求使用不同的 HTTP 连接，才能使控制请求不会被阻塞。
+微信长连接没有返回数据是因为长连接会出现web端关闭，服务端不清楚并返回数据导致数据丢失的情况，长连接加数据请求能极大情况避免数据丢失情况
+
+springboot 指定main启动
+https://blog.csdn.net/chen15369337607/article/details/78311224
