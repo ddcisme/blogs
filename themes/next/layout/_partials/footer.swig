@@ -49,10 +49,9 @@
 {% endif %}
 
 {% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
-  #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
-#}</div>
+  <div class="theme-info">
+  <img src="https://static.dy208.cn/o_1dfilp8ruo521thr1hvf18ji17soa.png">
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备19062330号</a></div>
 {% endif %}
 
 {% if theme.footer.custom_text %}
@@ -60,5 +59,3 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
-<img src="https://static.dy208.cn/o_1dfilp8ruo521thr1hvf18ji17soa.png">
-<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备19062330号</a>
